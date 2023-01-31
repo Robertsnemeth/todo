@@ -1,10 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Link from 'next/link'
 
 type Props = {}
 
 const todos = (props: Props) => {
   return (
-    <div>todos</div>
+    <main>
+        <h1>todos</h1>
+        <Link href="/">Home</Link>
+    </main>
   )
 }
 
