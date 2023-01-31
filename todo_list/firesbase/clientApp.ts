@@ -1,6 +1,6 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
+import firebase, {initializeApp} from "firebase/app";
+import { getAuth} from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const clientCredentials = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -12,9 +12,7 @@ const clientCredentials = {
     measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
   };
 
-if(!firebase.apps.length){
-    firebase.initializeApp(clientCredentials);
-    console.log("sucess on firebase init")
-}
+const app = initializeApp(clientCredentials)
 
-export default firebase;
+export const auth = getAuth(app);
+export const db = getFirestore(app);

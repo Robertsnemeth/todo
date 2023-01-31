@@ -1,13 +1,16 @@
+import { UserProvider } from '@/contexts/UserContext'
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
     <Html lang="en">
-      <Head />
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
+        <Head />
+        <body className="bg-gray-900">
+        <UserProvider>
+            <Main />
+        </UserProvider>
+            <NextScript />
+        </body>
+      </Html>
   )
 }

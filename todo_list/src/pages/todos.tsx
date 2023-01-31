@@ -6,7 +6,7 @@ type Props = {}
 const todos = (props: Props) => {
   return (
     <main>
-        <h1>todos</h1>
+        <h1 className="border">todos</h1>
         <Link href="/">Home</Link>
     </main>
   )

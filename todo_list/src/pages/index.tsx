@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import firebase from 'firesbase/clientApp';
+import { db, auth } from 'firesbase/clientApp';
 import { useEffect } from 'react';
+import Login from '@/components/Login';
 
 export default function Home() {
 
-firebase
-
   return (
     <>
-      <h2 className='text-3xl'>hello world</h2>
+      <h2 className='text-3xl text-red-400'>hello world</h2>
+      <Login/>
       <Link href="/todos">todos</Link>
     </>
   )
