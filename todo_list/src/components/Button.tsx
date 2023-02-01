@@ -1,12 +1,19 @@
 import React from 'react'
 
 type Props = {
-    children: string
+    children: string,
+    setState: React.Dispatch<React.SetStateAction<boolean>>
+    state: boolean
 }
 
-function Button({children}: Props) {
+function Button({children, setState, state}: Props) {
+
+  const handleClick = () => {
+    setState(true);
+  }
+
   return (
-    <button className="p-2 rounded text-white bg-purple-900 hover:bg-purple-800">{children}</button>
+    <button className="p-2 rounded text-white bg-indigo-900 hover:bg-indigo-800 focus:bg-white focus:text-indigo-900" onClick={() => handleClick()}>{children}</button>
   )
 }
 

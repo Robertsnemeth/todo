@@ -1,4 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Yanone+Kaffeesatz:wght@300&display=swap');
+
+* {
+    font-family: 'Fredoka One', cursive;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    margin: 0px, auto;
+    padding: 0px;
+}
+
 

@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { FormEvent } from 'react'
 
 type Props = {
-  value: string
+  state: string,
+  setState: React.Dispatch<React.SetStateAction<string>>,
 }
 
-function Input({value}:Props) {
+function Input({
+  state,
+  setState
+}:Props) {
     
+  const changeHandler = (e:FormEvent) => {
+    //@ts-ignore
+    setState(e.currentTarget.value)
+  }
+
   return (
-    <input type="text" className="p-2 border border-white rounded " value={value} />
+    <input type="text" className="p-2 border border-white rounded " value={state} required onChange={(e:FormEvent) => changeHandler(e)}/>
   )
 }
 
