@@ -11,6 +11,8 @@ const todos = (props: Props) => {
 
   const router = useRouter();
 
+
+  //TODO fix logout functionality
   async function handleLogout() {
     await logout
     router.push("/")
