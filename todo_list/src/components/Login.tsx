@@ -49,7 +49,7 @@ function Login({}: Props) {
 
   return (
         <form onSubmit={(e:FormEvent) => handleSubmit(e)} className="flex flex-col gap-2 w-3/4 lg:w-1/4">
-          {errors && <div className="bg-red-900 rounded p-2 border border-red-700 text-center">{errors}</div>}
+          {errors && <div className="rounded p-2 border border-red-700 text-center text-red-700 transition-all">{errors}</div>}
             <Label htmlFor='email'>Email</Label>
             <Input state={email} setState={setEmail}/>
             <Label htmlFor='password'>Password</Label>

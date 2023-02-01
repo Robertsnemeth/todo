@@ -13,7 +13,7 @@ export default function Home() {
     <main className="flex flex-col gap-2 items-center justify-center min-w-screen min-h-screen">
       <h2 className='text-3xl text-indigo-800'>TODO LIST</h2>
       <Login/>
-      <Link href="/todos">todos</Link>
+      {currentUser && <Link href="/todos">todos</Link>}
     </main>
   )
 }
