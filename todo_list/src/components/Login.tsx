@@ -53,7 +53,7 @@ function Login({}: Props) {
             <Label htmlFor='email'>Email</Label>
             <Input state={email} setState={setEmail}/>
             <Label htmlFor='password'>Password</Label>
-            <Input state={password} setState={setPassword}/>
+            <Input state={password} setState={setPassword} inputType="password"/>
             <Button setState={setIsLoggingIn} state={isLoggingIn}>Login</Button>
             <Button setState={setIsRegistering} state={isRegistering}>Register</Button>
         </form>

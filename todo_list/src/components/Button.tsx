@@ -13,7 +13,7 @@ function Button({children, setState, state}: Props) {
   }
 
   return (
-    <button className="p-2 rounded text-white bg-indigo-900 hover:bg-indigo-800 focus:bg-white focus:text-indigo-900 transition-colors delay-100" onClick={() => handleClick()}>{children}</button>
+    <button className="p-2 rounded text-white bg-indigo-900 hover:bg-indigo-800 focus:bg-white focus:text-indigo-900 transition-colors delay-75" onClick={() => handleClick()}>{children}</button>
   )
 }
 
