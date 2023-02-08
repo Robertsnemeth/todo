@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { db } from 'firesbase/clientApp';
-import { doc, setDoc, getDoc, arrayUnion, updateDoc, FieldValue } from 'firebase/firestore';
+import { doc, setDoc, getDoc, arrayUnion, updateDoc } from 'firebase/firestore';
 import { useAuth } from '@/contexts/UserContext';
 import { useRouter } from 'next/navigation';
 import Input from '@/components/Form Components/Input';
@@ -52,19 +52,23 @@ const todos = (props: Props) => {
 
   return (
     <main className="flex flex-col gap-2 items-center justify-center min-w-screen min-h-screen">
+          <section className='flex gap-5 justify-end'>
+            <Link href="/" className="p-2 rounded text-white bg-indigo-900 hover:bg-indigo-800 focus:bg-white focus:text-indigo-900 transition-colors delay-100 w-48 text-center">Home</Link>
+            <button className="p-2 rounded text-white bg-indigo-900 hover:bg-indigo-800 focus:bg-white focus:text-indigo-900 transition-colors delay-100 w-48 text-center" onClick={() => handleLogout()}>Logout</button>
+          </section>
         <h1 className="text-indigo-800 text-3xl font-extrabold">todos</h1>
           <form onSubmit={(e) => handleSubmit(e)} className="flex flex-col gap-2">
             <Label htmlFor="todo">Todo Item</Label>
             <Input id="todo" state={todoItem} setState={setTodoItem} />
             <Button>Submit</Button>
           </form>
-          <div className="flex flex-col gap-2">
+          <section className="flex flex-col gap-2">
             {allTodoItems?.map((todo, index) => (
-              <h2 key={index} className="text-indigo-700 border border-indigo-800 p-3  rounded font-bold w-full uppercase">{todo.item}</h2>
+              todo?.map((item:string, index:number) => (
+                <h2 key={index} className="text-indigo-700 border border-indigo-800 p-3  rounded font-bold w-full uppercase">{item.item}</h2>
+              ))
             ))}
-          </div>
-        <Link href="/" className="p-2 rounded text-white bg-indigo-900 hover:bg-indigo-800 focus:bg-white focus:text-indigo-900 transition-colors delay-100">Home</Link>
-        <button className="p-2 rounded text-white bg-indigo-900 hover:bg-indigo-800 focus:bg-white focus:text-indigo-900 transition-colors delay-100" onClick={() => handleLogout()}>Logout</button>
+          </section>
     </main>
   )
 }
