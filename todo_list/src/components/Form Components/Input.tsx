@@ -3,13 +3,15 @@ import React, { FormEvent } from 'react'
 type Props = {
   state: string,
   setState: React.Dispatch<React.SetStateAction<string>>,
-  inputType?: string
+  inputType?: string,
+  id: string
 }
 
 function Input({
   state,
   setState,
-  inputType
+  inputType,
+  id
 }:Props) {
     
   const changeHandler = (e:FormEvent) => {
@@ -18,7 +20,7 @@ function Input({
   }
 
   return (
-    <input type={inputType === "password" ? "password" : "text"} className="p-2 border border-white rounded " value={state} required onChange={(e:FormEvent) => changeHandler(e)}/>
+    <input id={id} type={inputType === "password" ? "password" : "text"} className="p-2 border border-white rounded " value={state} required onChange={(e:FormEvent) => changeHandler(e)}/>
   )
 }
 

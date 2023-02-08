@@ -51,9 +51,9 @@ function Login({}: Props) {
         <form onSubmit={(e:FormEvent) => handleSubmit(e)} className="flex flex-col gap-2 w-3/4 lg:w-1/4">
           {errors && <div className="rounded p-2 border border-red-700 text-center text-red-700 transition-all">{errors}</div>}
             <Label htmlFor='email'>Email</Label>
-            <Input state={email} setState={setEmail}/>
+            <Input state={email} setState={setEmail} id="email"/>
             <Label htmlFor='password'>Password</Label>
-            <Input state={password} setState={setPassword} inputType="password"/>
+            <Input state={password} setState={setPassword} inputType="password" id="password"/>
             <Button setState={setIsLoggingIn} state={isLoggingIn}>Login</Button>
             <Button setState={setIsRegistering} state={isRegistering}>Register</Button>
         </form>

@@ -1,7 +1,6 @@
 import  { useContext, useState, useEffect, useRef, createContext } from 'react';
-import { auth, db } from 'firesbase/clientApp';
+import { auth } from 'firesbase/clientApp';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
-import { doc, getDoc } from 'firebase/firestore';
 
 const AuthContext = createContext<any>(null)
 

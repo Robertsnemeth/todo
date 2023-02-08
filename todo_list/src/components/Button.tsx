@@ -2,13 +2,14 @@ import React from 'react'
 
 type Props = {
     children: string,
-    setState: React.Dispatch<React.SetStateAction<boolean>>,
-    state: boolean,
+    setState?: React.Dispatch<React.SetStateAction<boolean>>,
+    state?: boolean,
 }
 
 function Button({children, setState, state}: Props) {
 
   const handleClick = () => {
+    if(setState) 
     setState(true);
   }
 
