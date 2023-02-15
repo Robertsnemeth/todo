@@ -4,7 +4,7 @@ type Props = {
   state: string,
   setState: React.Dispatch<React.SetStateAction<string>>,
   inputType?: string,
-  id: string
+  id?: string
 }
 
 function Input({
